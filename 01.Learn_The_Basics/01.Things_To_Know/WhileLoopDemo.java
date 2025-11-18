@@ -1,15 +1,11 @@
-// WhileLoopDemo.java
-// Llama-style all-in-one tutorial on While Loops in Java
-// Author: Jeet Vamja
-// Run: javac WhileLoopDemo.java && java WhileLoopDemo
-
 import java.util.Scanner;
 
 public class WhileLoopDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 1️⃣ WHAT IS A WHILE LOOP?
          * -------------------------------------------------------
          * A 'while' loop executes a block of code repeatedly
@@ -17,7 +13,7 @@ public class WhileLoopDemo {
          *
          * Syntax:
          * while (condition) {
-         *     // body
+         * // body
          * }
          *
          * Steps:
@@ -36,7 +32,8 @@ public class WhileLoopDemo {
         System.out.println("Loop ended when count = " + count);
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 2️⃣ FACTORIAL EXAMPLE (Practical Use)
          * -------------------------------------------------------
          * Factorial of n = n * (n-1) * (n-2) * ... * 1
@@ -54,7 +51,8 @@ public class WhileLoopDemo {
         System.out.println("Factorial of " + n + " is: " + factorial);
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 3️⃣ INPUT VALIDATION USING WHILE
          * -------------------------------------------------------
          * While loops are great for repeated user input
@@ -71,7 +69,8 @@ public class WhileLoopDemo {
         System.out.println("Valid age entered: " + age);
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 4️⃣ INFINITE LOOPS & TERMINATION CONDITIONS
          * -------------------------------------------------------
          * Infinite loop example (⚠️ Don’t actually run endlessly!)
@@ -82,19 +81,21 @@ public class WhileLoopDemo {
         int i = 1;
         while (true) {
             System.out.print(i + " ");
-            if (i == 10) break; // stops infinite loop
+            if (i == 10)
+                break; // stops infinite loop
             i++;
         }
         System.out.println("\nLoop stopped after break.\n");
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 5️⃣ USING break AND continue
          * -------------------------------------------------------
          * - break: exits loop immediately
          * - continue: skips to next iteration
          */
         System.out.println("=== 5️⃣ Break and Continue Example ===");
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         int target = 6;
 
         System.out.println("Searching for " + target + " using break:");
@@ -112,22 +113,24 @@ public class WhileLoopDemo {
         int j = 0;
         while (j < numbers.length) {
             j++;
-            if (numbers[j - 1] % 2 == 0) continue; // skip evens
+            if (numbers[j - 1] % 2 == 0)
+                continue; // skip evens
             System.out.println("Odd: " + numbers[j - 1]);
         }
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 6️⃣ DO-WHILE LOOP (Executes at least once)
          * -------------------------------------------------------
          * Syntax:
          * do {
-         *    // body
+         * // body
          * } while (condition);
          *
          * Difference:
-         *  - while → checks condition first
-         *  - do-while → executes once before checking
+         * - while → checks condition first
+         * - do-while → executes once before checking
          */
         System.out.println("=== 6️⃣ Do-While Example (executes at least once) ===");
         int num;
@@ -138,7 +141,8 @@ public class WhileLoopDemo {
         System.out.println("You entered: " + num);
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 7️⃣ NESTED WHILE LOOPS
          * -------------------------------------------------------
          * Example: Print a multiplication table (2D pattern)
@@ -156,7 +160,8 @@ public class WhileLoopDemo {
         }
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 8️⃣ OPTIMIZATION & BEST PRACTICES
          * -------------------------------------------------------
          * ✅ Always ensure the condition will eventually be false.
@@ -172,7 +177,8 @@ public class WhileLoopDemo {
         System.out.println("- Keep loops efficient (avoid unnecessary checks).");
         System.out.println();
 
-        /* -------------------------------------------------------
+        /*
+         * -------------------------------------------------------
          * 9️⃣ COMPARISON: while vs for vs do-while
          * -------------------------------------------------------
          * for: known number of iterations

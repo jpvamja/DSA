@@ -1,7 +1,3 @@
-// ComplexityDemo.java
-// Single-file tutorial: Time Complexity & Space Complexity (Big O) with examples
-// Author: Jeet Vamja
-//
 // This file contains:
 //  - short theory notes (as comments / printed output)
 //  - examples demonstrating O(1), O(N), O(N^2), O(log N), O(N log N)
@@ -43,10 +39,10 @@ public class ComplexityDemo {
     // -------------------------
     static long exampleLinear(int n) {
         long ops = 0;
-        int sum = 0;          // 1 op
+        int sum = 0; // 1 op
         ops++;
         for (int i = 0; i < n; i++) { // approx n iterations
-            sum += i;         // 1 op per iteration (addition)
+            sum += i; // 1 op per iteration (addition)
             ops += 1;
         }
         ops++; // final return/assignment
@@ -87,9 +83,10 @@ public class ComplexityDemo {
     // -------------------------
     static long exampleNLogN(int n) {
         // We won't sort huge arrays here; we return an estimate: n * log2(n)
-        if (n <= 1) return 0;
+        if (n <= 1)
+            return 0;
         double est = n * (Math.log(n) / Math.log(2)); // n * log2(n)
-        return (long)Math.round(est);
+        return (long) Math.round(est);
     }
 
     // -------------------------
@@ -111,22 +108,25 @@ public class ComplexityDemo {
     // -------------------------
     // constant extra space O(1)
     static int[] spaceConstantExample(int n) {
-        // uses a fixed number of primitive variables and returns a single int[] of size 1
+        // uses a fixed number of primitive variables and returns a single int[] of size
+        // 1
         int a = 0, b = 1;
-        return new int[]{a + b}; // auxiliary O(1) array of size 1
+        return new int[] { a + b }; // auxiliary O(1) array of size 1
     }
 
     // linear extra space O(n)
     static int[] spaceLinearExample(int n) {
         // creates an array of size n -> O(n) auxiliary space
         int[] arr = new int[n];
-        for (int i = 0; i < n; i++) arr[i] = i;
+        for (int i = 0; i < n; i++)
+            arr[i] = i;
         return arr; // caller can inspect length
     }
 
     // recursion depth example -> space complexity O(n) due to call stack
     static int recursionDepthExample(int n) {
-        if (n <= 0) return 0;
+        if (n <= 0)
+            return 0;
         return 1 + recursionDepthExample(n - 1); // uses O(n) stack frames
     }
 
@@ -192,7 +192,8 @@ public class ComplexityDemo {
         System.out.println("- Don't equate measured runtime directly to Big-O (different machines/IO/etc).");
         System.out.println("- Beware hidden costs: Java's sort has O(n log n) with sizable constant.");
         System.out.println("- Memory limits matter: O(n) arrays for n=1e8 may blow memory.");
-        System.out.println("- For recursion, beware stack overflow for deep recursion (use loops or tail recursion).\n");
+        System.out
+                .println("- For recursion, beware stack overflow for deep recursion (use loops or tail recursion).\n");
     }
 
     // -------------------------
@@ -207,12 +208,14 @@ public class ComplexityDemo {
         Random rnd = new Random(1);
 
         // Prepare array
-        for (int i = 0; i < n; i++) arr[i] = rnd.nextInt();
+        for (int i = 0; i < n; i++)
+            arr[i] = rnd.nextInt();
 
         // --- O(N) pass ---
         long t0 = System.nanoTime();
         long s = 0;
-        for (int i = 0; i < n; i++) s += arr[i];
+        for (int i = 0; i < n; i++)
+            s += arr[i];
         long t1 = System.nanoTime();
         System.out.printf("O(N) pass: n=%d took %.3f ms\n", n, (t1 - t0) / 1e6);
 
@@ -227,7 +230,9 @@ public class ComplexityDemo {
         if (n <= 2000) {
             long t4 = System.nanoTime();
             long cnt = 0;
-            for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) cnt++;
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    cnt++;
             long t5 = System.nanoTime();
             System.out.printf("O(N^2) double-loop for n=%d took %.3f ms (cnt=%d)\n", n, (t5 - t4) / 1e6, cnt);
         } else {
@@ -263,7 +268,10 @@ public class ComplexityDemo {
         if (ans.equals("y") || ans.equals("yes")) {
             System.out.print("Enter n for benchmark (use small values like 1000 or 10000): ");
             int bn = 1000;
-            try { bn = Integer.parseInt(sc.nextLine().trim()); } catch (Exception ignored) {}
+            try {
+                bn = Integer.parseInt(sc.nextLine().trim());
+            } catch (Exception ignored) {
+            }
             microBenchmark(bn);
         }
 
@@ -279,7 +287,8 @@ public class ComplexityDemo {
         System.out.println("- Memorize common complexities (O(1), O(log n), O(n), O(n log n), O(n^2)).");
         System.out.println("- Practice deriving complexity by counting loops, recursion depth, and extra space.");
         System.out.println("- For competitive programming, aim for O(n log n) or better unless N is small.");
-        System.out.println("- In interviews, explain worst-case, mention space complexity, and show the reasoning steps.\n");
+        System.out.println(
+                "- In interviews, explain worst-case, mention space complexity, and show the reasoning steps.\n");
 
         sc.close();
         System.out.println("End of ComplexityDemo. Happy learning!");

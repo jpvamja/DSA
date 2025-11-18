@@ -1,8 +1,3 @@
-// DataTypesDemo.java
-// Llama-style single-file Java quick reference for data types
-// Author: Jeet Vamja
-// Run: javac DataTypesDemo.java && java DataTypesDemo
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,11 +6,13 @@ public class DataTypesDemo {
     public static void main(String[] args) {
         System.out.println("=== Java Data Types — Llama Quick Reference ===\n");
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * PRIMITIVE TYPES (8 types)
-         * --------------------------- */
+         * ---------------------------
+         */
 
-        // 1) byte  : 8-bit signed integer
+        // 1) byte : 8-bit signed integer
         byte bMin = Byte.MIN_VALUE; // -128
         byte bMax = Byte.MAX_VALUE; // 127
         System.out.println("byte range: " + bMin + " to " + bMax);
@@ -51,9 +48,11 @@ public class DataTypesDemo {
         boolean flag = true;
         System.out.println("boolean flag = " + flag + "\n");
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * REFERENCE TYPES
-         * --------------------------- */
+         * ---------------------------
+         */
 
         // String (immutable sequence of chars)
         String name = "Jeet";
@@ -61,7 +60,7 @@ public class DataTypesDemo {
         System.out.println("String greeting: " + greeting);
 
         // Arrays (fixed-size)
-        int[] arr = {1, 2, 3, 4};
+        int[] arr = { 1, 2, 3, 4 };
         System.out.println("array arr: " + Arrays.toString(arr));
         // change element
         arr[1] = 20;
@@ -69,13 +68,16 @@ public class DataTypesDemo {
 
         // ArrayList (resizable list) - part of java.util
         ArrayList<String> list = new ArrayList<>();
-        list.add("apple"); list.add("banana");
+        list.add("apple");
+        list.add("banana");
         System.out.println("ArrayList list: " + list);
         System.out.println();
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * CASTING (implicit and explicit)
-         * --------------------------- */
+         * ---------------------------
+         */
 
         // Implicit casting (widening) - safe
         int small = 100;
@@ -92,19 +94,23 @@ public class DataTypesDemo {
         int overflowed = (int) huge; // wrap-around occurs
         System.out.println("casting long 2_147_483_648L to int -> wrap-around: " + overflowed + "\n");
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * LITERALS & SUFFIXES
-         * --------------------------- */
-        int hex = 0xFF;    // hex literal
+         * ---------------------------
+         */
+        int hex = 0xFF; // hex literal
         int binary = 0b1010; // binary literal (since Java 7)
         long withL = 123L; // long literal
         float withF = 1.2f; // float literal
         System.out.println("hex 0xFF = " + hex + ", binary 0b1010 = " + binary);
         System.out.println();
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * WRAPPER CLASSES & PARSING
-         * --------------------------- */
+         * ---------------------------
+         */
         String numStr = "2025";
         int parsed = Integer.parseInt(numStr); // String -> int
         Integer boxed = Integer.valueOf(parsed); // primitive -> wrapper (autoboxing)
@@ -115,9 +121,11 @@ public class DataTypesDemo {
         double parsedDouble = Double.parseDouble(doubleStr);
         System.out.println("parseDouble(\"3.14159\") -> " + parsedDouble + "\n");
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * NULL and EQUALITY for reference types
-         * --------------------------- */
+         * ---------------------------
+         */
         String a = new String("hello");
         String bStr = "hello"; // string literal in pool
         System.out.println("a == bStr ? " + (a == bStr) + "  (reference equality)");
@@ -125,21 +133,25 @@ public class DataTypesDemo {
         String maybe = null; // reference has no object
         System.out.println("maybe == null -> " + (maybe == null) + "\n");
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * DEFAULT VALUES (fields only - demo here as comments)
          * ---------------------------
          * Local variables must be initialized before use.
          * Class-level fields defaults (if not initialized):
-         *  byte, short, int, long -> 0
-         *  float, double -> 0.0
-         *  char -> '\u0000'
-         *  boolean -> false
-         *  reference types -> null
-         * --------------------------- */
+         * byte, short, int, long -> 0
+         * float, double -> 0.0
+         * char -> '\u0000'
+         * boolean -> false
+         * reference types -> null
+         * ---------------------------
+         */
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * USER INPUT & PARSING (Scanner)
-         * --------------------------- */
+         * ---------------------------
+         */
         System.out.println("=== Scanner input demo (enter an int) ===");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter an integer: ");
@@ -158,9 +170,11 @@ public class DataTypesDemo {
         }
         sc.close();
 
-        /* ---------------------------
+        /*
+         * ---------------------------
          * FINAL QUICK TIPS
-         * --------------------------- */
+         * ---------------------------
+         */
         System.out.println("\n=== Quick Tips ===");
         System.out.println("- Use int for most integer needs. Use long when > 2^31-1.");
         System.out.println("- Use double for decimal arithmetic (unless you need float for memory).");

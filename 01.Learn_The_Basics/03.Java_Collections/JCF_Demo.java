@@ -166,24 +166,24 @@ public class JCF_Demo {
         // ==============================
         System.out.println("\n=== INTERNAL WORKING SUMMARY ===");
         System.out.println("""
-        - HashMap / HashSet → use hash table (O(1) average insert/search)
-        - TreeMap / TreeSet → use Red-Black Tree (O(log n) operations)
-        - ArrayList → uses a dynamic resizable array
-        - LinkedList → uses doubly linked nodes
-        - Collections class → provides utility methods (sort, reverse, etc.)
-        """);
+                - HashMap / HashSet → use hash table (O(1) average insert/search)
+                - TreeMap / TreeSet → use Red-Black Tree (O(log n) operations)
+                - ArrayList → uses a dynamic resizable array
+                - LinkedList → uses doubly linked nodes
+                - Collections class → provides utility methods (sort, reverse, etc.)
+                """);
 
         // ==============================
         // ✅ 9. SUMMARY TABLE (Quick Reference)
         // ==============================
         System.out.println("\n=== SUMMARY TABLE ===");
         System.out.println("""
-Interface | Implementations           | Order            | Duplicates | Use Case
-----------|---------------------------|------------------|------------|-------------------------
-List      | ArrayList, LinkedList     | Ordered          | Yes        | Ordered data, indexing
-Set       | HashSet, TreeSet          | Unordered/Sorted | No         | Unique items
-Queue     | LinkedList, PriorityQueue | FIFO/Priority    | Yes        | Task scheduling
-Map       | HashMap, TreeMap          | Key-Value Sorted | Keys unique| Fast lookup by key
-""");
+                Interface | Implementations           | Order            | Duplicates | Use Case
+                ----------|---------------------------|------------------|------------|-------------------------
+                List      | ArrayList, LinkedList     | Ordered          | Yes        | Ordered data, indexing
+                Set       | HashSet, TreeSet          | Unordered/Sorted | No         | Unique items
+                Queue     | LinkedList, PriorityQueue | FIFO/Priority    | Yes        | Task scheduling
+                Map       | HashMap, TreeMap          | Key-Value Sorted | Keys unique| Fast lookup by key
+                """);
     }
 }

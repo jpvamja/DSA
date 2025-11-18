@@ -1,8 +1,3 @@
-// ArraysAndStringsDemo.java
-// Single-file tutorial: Arrays and Strings in Java (interactive + commented)
-// Author: Jeet Vamja (llama-style compact tutorial)
-// Run: javac ArraysAndStringsDemo.java && java ArraysAndStringsDemo
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,7 +16,9 @@ public class ArraysAndStringsDemo {
     // ---------- Linear search (O(n)) ----------
     // Returns index of key or -1 if not found
     public static int linearSearch(int[] arr, int key) {
-        for (int i = 0; i < arr.length; i++) if (arr[i] == key) return i;
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] == key)
+                return i;
         return -1;
     }
 
@@ -35,11 +32,14 @@ public class ArraysAndStringsDemo {
     }
 
     // ---------- Insert into fixed-size array (manual shifting) ----------
-    // Inserts val at index pos by shifting elements right. If array full, returns false.
+    // Inserts val at index pos by shifting elements right. If array full, returns
+    // false.
     public static boolean arrayInsert(int[] arr, int size, int pos, int val) {
         // size = number of meaningful elements currently in arr (<= arr.length)
-        if (size >= arr.length) return false;        // no space
-        if (pos < 0 || pos > size) return false;     // invalid position
+        if (size >= arr.length)
+            return false; // no space
+        if (pos < 0 || pos > size)
+            return false; // invalid position
         for (int i = size; i > pos; i--) {
             arr[i] = arr[i - 1]; // shift right
         }
@@ -50,7 +50,8 @@ public class ArraysAndStringsDemo {
     // ---------- Delete from fixed-size array (manual shifting) ----------
     // Deletes element at index pos and returns new size (size-1)
     public static int arrayDelete(int[] arr, int size, int pos) {
-        if (pos < 0 || pos >= size) return size; // invalid -> no change
+        if (pos < 0 || pos >= size)
+            return size; // invalid -> no change
         for (int i = pos; i < size - 1; i++) {
             arr[i] = arr[i + 1]; // shift left
         }
@@ -78,8 +79,8 @@ public class ArraysAndStringsDemo {
         System.out.println("Using StringBuilder => " + sb.toString());
 
         // equals vs ==
-        String a = new String(s);   // new object
-        String b = s;               // reference to original literal (or same object)
+        String a = new String(s); // new object
+        String b = s; // reference to original literal (or same object)
         System.out.println("a == b ? " + (a == b) + "  (reference equality)");
         System.out.println("a.equals(b) ? " + a.equals(b) + "  (content equality)");
 
@@ -116,7 +117,11 @@ public class ArraysAndStringsDemo {
         int[] arr = new int[8]; // fixed-size array of 8 ints (initialized to zeros)
         // Fill first 5 positions
         int size = 5;
-        arr[0] = 10; arr[1] = 20; arr[2] = 30; arr[3] = 40; arr[4] = 50;
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[4] = 50;
         System.out.println("Initial array (size=" + size + ", capacity=" + arr.length + "):");
         printArray(arr);
 
@@ -133,8 +138,11 @@ public class ArraysAndStringsDemo {
         // Insert example (shift)
         System.out.print("\nInsert value 25 at index 2 (shifting) -> ");
         boolean ok = arrayInsert(arr, size, 2, 25);
-        if (ok) { size++; printArray(Arrays.copyOf(arr, size)); }
-        else System.out.println("Insert failed (no space or invalid pos).");
+        if (ok) {
+            size++;
+            printArray(Arrays.copyOf(arr, size));
+        } else
+            System.out.println("Insert failed (no space or invalid pos).");
 
         // Delete example
         System.out.print("\nDelete element at index 3 -> ");
@@ -149,13 +157,17 @@ public class ArraysAndStringsDemo {
         System.out.print("Enter key to binary-search: ");
         int key2 = sc.nextInt();
         int res = binarySearchSorted(sorted, key2);
-        if (res >= 0) System.out.println(key2 + " found at index (in sorted array): " + res);
-        else System.out.println(key2 + " not found (binarySearch returned " + res + ")");
+        if (res >= 0)
+            System.out.println(key2 + " found at index (in sorted array): " + res);
+        else
+            System.out.println(key2 + " not found (binarySearch returned " + res + ")");
 
         // ALTERNATIVE: dynamic array - ArrayList
         printHeader("ArrayList (dynamic array alternative)");
         ArrayList<Integer> list = new ArrayList<>();
-        list.add(10); list.add(20); list.add(30);
+        list.add(10);
+        list.add(20);
+        list.add(30);
         System.out.println("ArrayList before add: " + list);
         list.add(1, 15); // insert at index
         list.remove(Integer.valueOf(20)); // remove by value
@@ -174,7 +186,10 @@ public class ArraysAndStringsDemo {
         String p = sc.nextLine().trim();
         boolean isPal = true;
         for (int i = 0, j = p.length() - 1; i < j; i++, j--) {
-            if (p.charAt(i) != p.charAt(j)) { isPal = false; break; }
+            if (p.charAt(i) != p.charAt(j)) {
+                isPal = false;
+                break;
+            }
         }
         System.out.println("Is \"" + p + "\" palindrome? " + isPal);
 

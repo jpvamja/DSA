@@ -1,3 +1,4 @@
+
 // Given an integer N, return the number of digits in N.
 import java.util.Scanner;
 
@@ -13,8 +14,7 @@ public class Q01 {
         // digits++;
         // }
 
-        
-        number = Math.abs(number); 
+        number = Math.abs(number);
 
         int digits;
         if (number == 0) {

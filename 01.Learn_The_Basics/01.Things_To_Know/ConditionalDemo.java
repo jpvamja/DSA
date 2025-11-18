@@ -1,8 +1,3 @@
-// ConditionalDemo.java
-// Llama-style single-file tutorial: Java conditional statements (if, else-if, nested if, ternary, switch)
-// Author: Jeet Vamja
-// Run: javac ConditionalDemo.java && java ConditionalDemo
-
 import java.util.Scanner;
 
 public class ConditionalDemo {
@@ -11,7 +6,8 @@ public class ConditionalDemo {
 
         System.out.println("=== Java Conditionals — Interactive Demo ===\n");
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 1) SIMPLE if
          * ------------------------------------------------------------
          * Execute a block only when condition is true.
@@ -19,13 +15,14 @@ public class ConditionalDemo {
         System.out.println("1) Simple if example:");
         System.out.print("Enter an integer: ");
         int n = sc.nextInt();
-        if (n % 2 == 0) {                   // condition uses == for equality
+        if (n % 2 == 0) { // condition uses == for equality
             System.out.println(n + " is even.");
         }
         // no else: when condition is false, nothing happens
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 2) if-else
          * ------------------------------------------------------------
          * Choose between two branches.
@@ -40,7 +37,8 @@ public class ConditionalDemo {
         }
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 3) else-if ladder (multiple mutually exclusive conditions)
          * ------------------------------------------------------------
          * Demonstrates grading logic. First version uses explicit bounds
@@ -68,7 +66,8 @@ public class ConditionalDemo {
         }
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 4) Refactored else-if (preferred)
          * Remove lower bounds because previous conditions already failed.
          */
@@ -92,7 +91,8 @@ public class ConditionalDemo {
         System.out.println("Grade: " + (grade == 'X' ? "Invalid" : grade));
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 5) NESTED if
          * ------------------------------------------------------------
          * Use nested if when decisions depend on previous checks.
@@ -100,8 +100,8 @@ public class ConditionalDemo {
         System.out.println("5) Nested if example:");
         System.out.print("Enter a positive integer to check (0 or negative to skip): ");
         int x = sc.nextInt();
-        if (x > 0) {                 // outer condition
-            if (x % 2 == 0) {        // inner condition
+        if (x > 0) { // outer condition
+            if (x % 2 == 0) { // inner condition
                 System.out.println(x + " is positive and even.");
             } else {
                 System.out.println(x + " is positive and odd.");
@@ -111,7 +111,8 @@ public class ConditionalDemo {
         }
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 6) TERNARY OPERATOR (compact if-else)
          * ------------------------------------------------------------
          * syntax: condition ? valueIfTrue : valueIfFalse
@@ -123,7 +124,8 @@ public class ConditionalDemo {
         System.out.println("Result: " + comparison);
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 7) LOGICAL OPERATORS (&&, ||, !)
          * ------------------------------------------------------------
          * Combine conditions using AND, OR, NOT.
@@ -142,7 +144,8 @@ public class ConditionalDemo {
         }
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 8) switch-statement (integer and String examples)
          * ------------------------------------------------------------
          * switch is useful when comparing a single value against many constants.
@@ -196,7 +199,8 @@ public class ConditionalDemo {
         }
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 9) COMMON PITFALLS & GOOD PRACTICES
          * ------------------------------------------------------------
          * - Use braces {} even for single-line blocks to avoid mistakes.
@@ -217,22 +221,25 @@ public class ConditionalDemo {
         System.out.println("|(0.1+0.2) - 0.3| < eps ? " + (Math.abs(a - 0.3) < epsilon));
         System.out.println();
 
-        /* ------------------------------------------------------------
+        /*
+         * ------------------------------------------------------------
          * 10) SUMMARY / QUICK CHEAT SHEET
          * ------------------------------------------------------------
-         * - if(condition) { ... } else { ... }            // basic
-         * - if(...) else if(...) ... else                 // ladder
-         * - nested if                                      // when dependent checks
-         * - condition ? valIfTrue : valIfFalse            // ternary expression
-         * - switch(value) { case X: ...; break; ... }      // multi-branch constant checks
+         * - if(condition) { ... } else { ... } // basic
+         * - if(...) else if(...) ... else // ladder
+         * - nested if // when dependent checks
+         * - condition ? valIfTrue : valIfFalse // ternary expression
+         * - switch(value) { case X: ...; break; ... } // multi-branch constant checks
          *
          * Logical operators:
          * - && (AND), || (OR), ! (NOT)
          *
          * Best practices:
-         * - Use braces {}, handle defaults, prefer refactored ranges in else-if ladders,
-         *   avoid == for doubles, use switch for many constant comparisons.
-         * ------------------------------------------------------------ */
+         * - Use braces {}, handle defaults, prefer refactored ranges in else-if
+         * ladders,
+         * avoid == for doubles, use switch for many constant comparisons.
+         * ------------------------------------------------------------
+         */
 
         System.out.println("=== End of Conditional Demo ===");
 

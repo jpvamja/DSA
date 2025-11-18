@@ -1,7 +1,3 @@
-// PassByDemo.java
-// Single-file tutorial showing how Java passes arguments to methods.
-// Author: Jeet Vamja
-//
 // Key idea (short): Java is ALWAYS pass-by-value.
 //  - For primitives: the *value* is the primitive itself -> copies are passed.
 //  - For objects: the *value* is a reference (pointer) to the object -> a copy of the reference is passed.
@@ -12,9 +8,15 @@ public class PassByDemo {
     // Simple wrapper class to demonstrate object field mutation
     static class Wrapper {
         int value;
-        Wrapper(int v) { value = v; }
+
+        Wrapper(int v) {
+            value = v;
+        }
+
         @Override
-        public String toString() { return "Wrapper(" + value + ")"; }
+        public String toString() {
+            return "Wrapper(" + value + ")";
+        }
     }
 
     // -------------- Examples for primitives --------------
@@ -28,7 +30,9 @@ public class PassByDemo {
     static void trySwapPrimitives(int x, int y) {
         // swapping local copies — caller's variables remain unchanged
         System.out.println("Inside trySwapPrimitives - before: x=" + x + ", y=" + y);
-        int temp = x; x = y; y = temp;
+        int temp = x;
+        x = y;
+        y = temp;
         System.out.println("Inside trySwapPrimitives - after : x=" + x + ", y=" + y);
     }
 
@@ -50,14 +54,18 @@ public class PassByDemo {
     static void trySwapReferences(Wrapper a, Wrapper b) {
         // attempt to swap references (only swaps local copies)
         System.out.println("Inside trySwapReferences - before: a=" + a + ", b=" + b);
-        Wrapper tmp = a; a = b; b = tmp;
+        Wrapper tmp = a;
+        a = b;
+        b = tmp;
         System.out.println("Inside trySwapReferences - after : a=" + a + ", b=" + b);
     }
 
     // Proper way to swap "values" stored inside wrappers (mutate fields)
     static void swapWrapperValues(Wrapper a, Wrapper b) {
         System.out.println("Inside swapWrapperValues - before: a=" + a + ", b=" + b);
-        int tmp = a.value; a.value = b.value; b.value = tmp;
+        int tmp = a.value;
+        a.value = b.value;
+        b.value = tmp;
         System.out.println("Inside swapWrapperValues - after : a=" + a + ", b=" + b);
     }
 
@@ -145,12 +153,15 @@ public class PassByDemo {
         // SUMMARY: quick printed recap
         System.out.println("\n=== Summary (Java) ===");
         System.out.println("- Java is PASS-BY-VALUE only.");
-        System.out.println("- For primitives: the value is copied. Methods cannot change caller's primitive variables.");
+        System.out
+                .println("- For primitives: the value is copied. Methods cannot change caller's primitive variables.");
         System.out.println("- For objects: the value passed is a REFERENCE (address). The reference itself is copied.");
         System.out.println("  • Methods can mutate object state via that reference (visible to caller).");
-        System.out.println("  • Methods cannot reassign the caller's reference by assigning the parameter to a new object.");
+        System.out.println(
+                "  • Methods cannot reassign the caller's reference by assigning the parameter to a new object.");
         System.out.println("- Strings are immutable: methods that 'modify' Strings create new objects.");
-        System.out.println("- To 'return multiple values' either return an array/object, or mutate passed mutable objects.\n");
+        System.out.println(
+                "- To 'return multiple values' either return an array/object, or mutate passed mutable objects.\n");
 
         System.out.println("=== End of Demo ===");
     }

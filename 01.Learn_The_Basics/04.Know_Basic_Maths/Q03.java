@@ -1,3 +1,4 @@
+
 // Given an integer N, return true if it is a palindrome else return false.
 // A palindrome is a number that reads the same backward as forward. For example, 121, 1331, and 4554 are palindromes because they remain the same when their digits are reversed.
 import java.util.Scanner;
@@ -11,14 +12,14 @@ public class Q03 {
         // int reverse = 0;
 
         // while (number > 0) {
-        //     reverse = reverse * 10 + (number%10);
-        //     number /= 10;
+        // reverse = reverse * 10 + (number%10);
+        // number /= 10;
         // }
         // if (temp == reverse) {
-        //     System.out.println("Pallindrome Number.");
+        // System.out.println("Pallindrome Number.");
         // }
         // else{
-        //     System.out.println("Not Pallindrome Number.");
+        // System.out.println("Not Pallindrome Number.");
         // }
 
         if (number < 0 || (number % 10 == 0 && number != 0)) {

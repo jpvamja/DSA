@@ -1,7 +1,3 @@
-// SwitchAndConditionalsDemo.java
-// Llama-style single-file tutorial for switch statements and conditional choices in Java
-// Author: Jeet Vamja
-//
 // What this file covers:
 // - When to use if-else vs switch
 // - switch with int, char, String, enum (explain)
@@ -9,17 +5,15 @@
 // - constant expressions requirement
 // - nested switch (demo + caution)
 // - best practices and common pitfalls
-//
-// Run:
-//   javac SwitchAndConditionalsDemo.java
-//   java SwitchAndConditionalsDemo
 
 import java.util.Scanner;
 
 public class SwitchAndConditionalsDemo {
 
     // A small enum example to show how switch works with enums
-    enum DayPart { MORNING, AFTERNOON, EVENING, NIGHT }
+    enum DayPart {
+        MORNING, AFTERNOON, EVENING, NIGHT
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -32,9 +26,11 @@ public class SwitchAndConditionalsDemo {
         System.out.println("  - You compare one expression against many constants");
         System.out.println("  - You want cleaner code for many exact-match branches\n");
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 1) Basic switch with integer (day-of-week example)
-         * ----------------------------------------------------------- */
+         * -----------------------------------------------------------
+         */
         System.out.println("1) switch with int (day-of-week):");
         System.out.print("Enter a number (1-7) for day: ");
         int day = readIntSafe(sc);
@@ -42,7 +38,7 @@ public class SwitchAndConditionalsDemo {
         switch (day) {
             case 1:
                 System.out.println("Monday");
-                break;                  // break prevents fall-through
+                break; // break prevents fall-through
             case 2:
                 System.out.println("Tuesday");
                 break;
@@ -61,22 +57,25 @@ public class SwitchAndConditionalsDemo {
             case 7:
                 System.out.println("Sunday");
                 break;
-            default:                     // default runs when no case matches
+            default: // default runs when no case matches
                 System.out.println("Invalid day number.");
         }
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 2) Fall-through demonstration (multiple labels / grouped cases)
-         * ----------------------------------------------------------- */
+         * -----------------------------------------------------------
+         */
         System.out.println("2) Fall-through & grouped cases:");
         System.out.print("Enter exam score (0-100): ");
         int score = readIntSafe(sc);
 
         // Grouped cases and fall-through are useful when multiple case-values map
-        // to the same code. No 'break' between 90, 100 means they fall through to the same block.
-        switch (score / 10) {    // integer division -> 0..10
-            case 10:              // 100 -> 10
+        // to the same code. No 'break' between 90, 100 means they fall through to the
+        // same block.
+        switch (score / 10) { // integer division -> 0..10
+            case 10: // 100 -> 10
             case 9:
                 System.out.println("Grade A");
                 break;
@@ -94,15 +93,21 @@ public class SwitchAndConditionalsDemo {
         }
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 3) switch with char
-         * ----------------------------------------------------------- */
+         * -----------------------------------------------------------
+         */
         System.out.println("3) switch with char (vowel/consonant check):");
         System.out.print("Enter a single letter: ");
         char ch = readCharSafe(sc);
 
         switch (Character.toLowerCase(ch)) {
-            case 'a': case 'e': case 'i': case 'o': case 'u':
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
                 System.out.println(ch + " is a vowel.");
                 break;
             default:
@@ -110,9 +115,11 @@ public class SwitchAndConditionalsDemo {
         }
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 4) switch with String (since Java 7)
-         * ----------------------------------------------------------- */
+         * -----------------------------------------------------------
+         */
         System.out.println("4) switch with String (command example):");
         sc.nextLine(); // consume newline
         System.out.print("Enter command (start / stop / pause / resume): ");
@@ -136,9 +143,11 @@ public class SwitchAndConditionalsDemo {
         }
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 5) switch with enums (best practice for enum branching)
-         * ----------------------------------------------------------- */
+         * -----------------------------------------------------------
+         */
         System.out.println("5) switch with enum (DayPart example):");
         System.out.print("Enter time of day (morning/afternoon/evening/night): ");
         String tp = sc.nextLine().trim().toUpperCase();
@@ -169,7 +178,8 @@ public class SwitchAndConditionalsDemo {
         }
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 6) Constant expression requirement & compile-time checks
          * -----------------------------------------------------------
          * - Case labels must be compile-time constants (literals, final vars).
@@ -180,7 +190,8 @@ public class SwitchAndConditionalsDemo {
         System.out.println("Duplicate case values are not allowed (compile-time error).");
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 7) Nested switch (possible but avoid deep nesting)
          * -----------------------------------------------------------
          * Demonstrate, but note readability concerns.
@@ -195,7 +206,7 @@ public class SwitchAndConditionalsDemo {
                 System.out.print("  Enter inner choice (a/b): ");
                 char inner = readCharSafe(sc);
 
-                switch (inner) {              // nested switch
+                switch (inner) { // nested switch
                     case 'a':
                         System.out.println("  Inner a");
                         break;
@@ -214,7 +225,8 @@ public class SwitchAndConditionalsDemo {
         }
         System.out.println("Note: nested switches reduce readability — prefer methods.\n");
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 8) Fall-through trap demo (forgetting break)
          * -----------------------------------------------------------
          */
@@ -224,7 +236,8 @@ public class SwitchAndConditionalsDemo {
         System.out.println("Be intentional about fall-through (sometimes used to group cases).");
         System.out.println();
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 9) When to use if-else instead of switch (summary)
          * -----------------------------------------------------------
          */
@@ -233,7 +246,8 @@ public class SwitchAndConditionalsDemo {
         System.out.println(" - Conditions involve boolean logic or multiple variables");
         System.out.println(" - You rely on floating point comparisons or complex expressions\n");
 
-        /* -----------------------------------------------------------
+        /*
+         * -----------------------------------------------------------
          * 10) Quick cheat-sheet of dos and don'ts
          * -----------------------------------------------------------
          */

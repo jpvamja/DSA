@@ -1,8 +1,3 @@
-// ForLoopDemo.java
-// Llama-style single-file tutorial: For loops in Java (interactive + commented)
-// Author: Jeet Vamja
-// Run: javac ForLoopDemo.java && java ForLoopDemo
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,13 +12,13 @@ public class ForLoopDemo {
          * -----------------------------
          * Syntax:
          * for (initialization; condition; update) {
-         *     // body
+         * // body
          * }
          *
          * Execution order:
-         *  - initialization (once)
-         *  - check condition → if true run body, else exit
-         *  - after body run update, then back to condition
+         * - initialization (once)
+         * - check condition → if true run body, else exit
+         * - after body run update, then back to condition
          *
          * Typical use: run a block a fixed number of times.
          */
@@ -123,7 +118,9 @@ public class ForLoopDemo {
          */
         System.out.println("7) Enhanced for (ArrayList example):");
         ArrayList<String> fruits = new ArrayList<>();
-        fruits.add("Apple"); fruits.add("Banana"); fruits.add("Mango");
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Mango");
         for (String fruit : fruits) {
             System.out.println(fruit);
         }
@@ -136,7 +133,7 @@ public class ForLoopDemo {
          * Useful when removing items from a list by index or iterating in reverse.
          */
         System.out.println("8) Looping backwards:");
-        int[] a = {10, 20, 30, 40, 50};
+        int[] a = { 10, 20, 30, 40, 50 };
         for (int i = a.length - 1; i >= 0; i--) {
             System.out.println("a[" + i + "] = " + a[i]);
         }
@@ -161,18 +158,20 @@ public class ForLoopDemo {
         System.out.print("Enter a positive integer N to compute sum 1..N: ");
         int N = sc.nextInt();
         long sum = 0;
-        for (int i = 1; i <= N; i++) sum += i;
-        System.out.println("Sum 1.."+N+" = " + sum);
+        for (int i = 1; i <= N; i++)
+            sum += i;
+        System.out.println("Sum 1.." + N + " = " + sum);
 
         // Factorial (watch for overflow; use long for larger values)
         System.out.print("Enter n (<=20) to compute n! (use <=20 to stay in long): ");
         int nf = sc.nextInt();
         long fact = 1;
-        for (int i = 2; i <= nf; i++) fact *= i;
+        for (int i = 2; i <= nf; i++)
+            fact *= i;
         System.out.println(nf + "! = " + fact);
 
         // Traversing an array
-        int[] arr = {5, 3, 8, 1, 2};
+        int[] arr = { 5, 3, 8, 1, 2 };
         System.out.print("Array elements: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + (i == arr.length - 1 ? "" : ", "));
@@ -182,7 +181,8 @@ public class ForLoopDemo {
         // Find max in array
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > max) max = arr[i];
+            if (arr[i] > max)
+                max = arr[i];
         }
         System.out.println("Max in array = " + max);
         System.out.println();
@@ -194,9 +194,9 @@ public class ForLoopDemo {
          */
         System.out.println("11) 2D array traversal (matrix):");
         int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
         };
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
