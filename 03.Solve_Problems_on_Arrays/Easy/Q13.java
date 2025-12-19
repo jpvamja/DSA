@@ -34,8 +34,8 @@ public class Q13 {
         int[] arr = { 10, 5, 2, 7, 1, 9 };
         int k = 15;
 
-        Q13 sol = new Q13();
-        int ans = sol.longestSubarray(arr, k);
+        Q13 obj = new Q13();
+        int ans = obj.longestSubarray(arr, k);
 
         System.out.println(ans);
     }
