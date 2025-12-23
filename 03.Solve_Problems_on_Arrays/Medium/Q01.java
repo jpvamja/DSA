@@ -52,13 +52,13 @@ public class Q01 {
     }
 
     public static void main(String[] args) {
-        Q01 sol = new Q01();
+        Q01 obj = new Q01();
         int[] arr = { 2, 6, 5, 8, 11 };
         int target = 14;
 
-        System.out.println(sol.twoSumExists(arr, target));
+        System.out.println(obj.twoSumExists(arr, target));
 
-        int[] res = sol.twoSumIndices(arr, target);
+        int[] res = obj.twoSumIndices(arr, target);
         System.out.println(res);
     }
 }
