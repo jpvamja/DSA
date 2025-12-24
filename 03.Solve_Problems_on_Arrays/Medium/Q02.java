@@ -27,9 +27,9 @@ public class Q02 {
         int[] arr = { 2, 0, 2, 1, 1, 0 };
         int n = arr.length;
 
-        Q02 sol = new Q02();
+        Q02 obj = new Q02();
 
-        sol.sortZeroOneTwo(arr, n);
+        obj.sortZeroOneTwo(arr, n);
 
         for (int x : arr) {
             System.out.print(x + " ");
